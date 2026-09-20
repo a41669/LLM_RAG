@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>📚 RAG 读书助手</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header>
+  <b>📚 RAG 读书助手</b>
+  <select id="books" onchange="switchBook()"><option value="">📕 默认书</option></select>
+  <label class="up"><input type="file" id="file" accept=".txt" onchange="uploadFile()" hidden>📁 上传书</label>
+  <button onclick="resetChat()">新对话</button>
+</header>
+<div id="wrap">
+  <div id="chat"></div>
+  <div id="side">
+    <h3>🔍 本轮检索到的片段（相似度）</h3>
+    <div id="sources"><span style="color:#8a93a0">提问后这里显示来源</span></div>
+  </div>
+</div>
+<div id="input">
+  <textarea id="q" placeholder="问书里的内容… （Enter 发送，Shift+Enter 换行）"></textarea>
+  <button id="send" onclick="send()">发送</button>
+</div>
+<script src="/static/app.js"></script>
+</body>
+</html>
